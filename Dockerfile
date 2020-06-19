@@ -10,6 +10,16 @@ RUN dnf install -y \
       rsync \
       python3-devel \
       python3-pip \
+      ImageMagick \
+      latexmk \
+      texlive-collection-basic \
+      texlive-collection-latex \
+      texlive-collection-xetex \
+      texlive-collection-luatex \
+      texlive-collection-fontsextra \
+      texlive-collection-mathscience \
+      texlive-collection-fontsrecommended \
+      texlive-collection-latexrecommended \
     && dnf autoremove && dnf clean all
 
 WORKDIR /home
