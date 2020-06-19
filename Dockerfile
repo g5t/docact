@@ -21,6 +21,7 @@ RUN dnf install -y \
       texlive-collection-fontsrecommended \
       texlive-collection-latexrecommended \
       texlive-standalone \
+      texlive-pgfplots \
     && dnf autoremove && dnf clean all
 
 WORKDIR /home
