@@ -20,6 +20,7 @@ RUN dnf install -y \
       texlive-collection-mathscience \
       texlive-collection-fontsrecommended \
       texlive-collection-latexrecommended \
+      texlive-standalone \
     && dnf autoremove && dnf clean all
 
 WORKDIR /home
