@@ -1,6 +1,7 @@
+wheel
 sphinx_rtd_theme
-breathe
-exhale
+breathe==4.19.2
+exhale==0.2.3
 sphinxcontrib-katex
 sphinxcontrib-tikz
 numpy
