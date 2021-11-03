@@ -1,0 +1,12 @@
+wget
+make
+cmake
+gcc
+g++
+git
+rsync
+perl
+python3-dev
+py3-pip
+py3-setuptools
+

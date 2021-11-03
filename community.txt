@@ -1,0 +1,6 @@
+catch2
+py3-pybind11-dev
+py3-lxml
+py3-numpy
+py3-matplotlib
+
