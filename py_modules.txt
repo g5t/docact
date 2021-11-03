@@ -1,0 +1,4 @@
+breathe
+sphinxcontrib-katex
+sphinxcontrib-tikz
+sphinx-rtd-theme

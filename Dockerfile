@@ -1,17 +1,20 @@
-FROM alpine:latest
+FROM alpine:3.14
 
 WORKDIR /home
 
 COPY main.txt /home
+RUN apk add -U --repository http://dl-3.alpinelinux.org/alpine/3.14/main $(cat main.txt)
+
 COPY community.txt /home
+RUN apk add -U --repository http://dl-3.alpinelinux.org/alpine/3.14/community $(cat community.txt)
 
-RUN apk add -U --repository http://dl-3.alpinelinux.org/alpine/edge/main $(cat main.txt)
-RUN apk add -U --repository http://dl-3.alpinelinux.org/alpine/edge/community $(cat community.txt)
+COPY testing.txt /home
+RUN apk add -U --repository http://dl-3.alpinelinux.org/alpine/edge/testing $(cat testing.txt)
 
-COPY requirements.txt /home
-RUN python3 -m pip install -r requirements.txt
+COPY py_modules.txt /home
+RUN python3 -m pip install -r py_modules.txt
 
-COPY tex.txt /home
+COPY tex_packages.txt /home
 COPY TinyTex* /home 
 RUN sh TinyTex-install.sh
-RUN tlmgr install $(cat tex.txt)
+RUN tlmgr install $(cat tex_packages.txt)
