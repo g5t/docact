@@ -9,5 +9,7 @@ A Docker container to build documentation for a Python/C++ project using Sphinx 
 | Sphinx                       | 4.5.0      |
 
 ## Usage
+
 Run: `docker run brille/docact`
-Build: docker build -t brille/docact`
+
+Build: `docker build -t brille/docact`
