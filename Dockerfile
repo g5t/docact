@@ -1,4 +1,4 @@
-FROM alpine:3.14
+FROM alpine:3.20
 
 WORKDIR /home
 
@@ -9,7 +9,8 @@ COPY edge.txt /home
 RUN apk add --no-cache -U --repository http://dl-3.alpinelinux.org/alpine/edge/testing $(cat edge.txt)
 
 COPY py_modules.txt /home
-RUN python3 -m pip install --upgrade pip; python3 -m pip install -r py_modules.txt
+RUN python3 -m pip install --upgrade pip --break-system-packages\
+    && python3 -m pip install --break-system-packages -r py_modules.txt
 
 RUN wget -qO- "https://yihui.org/tinytex/install-unx.sh" | sh
 
